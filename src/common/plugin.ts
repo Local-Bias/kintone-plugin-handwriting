@@ -37,4 +37,8 @@ const createConfig = (): PluginStorage => ({
 
 export const getNewCondition = (): PluginCondition => ({
   fileField: '',
+  size: {
+    width: 800,
+    height: 300,
+  },
 });

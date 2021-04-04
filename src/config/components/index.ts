@@ -4,3 +4,4 @@ export { default as SocialIcons } from './social-icons';
 export { default as Form } from './form';
 export { default as Footer } from './footer';
 export { default as FormRow } from './form-row';
+export { default as SizeSlider } from './size-slider';

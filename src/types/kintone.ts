@@ -14,6 +14,10 @@ type PluginStorage = {
 
 type PluginCondition = {
   fileField: string;
+  size: {
+    width: number;
+    height: number;
+  };
 };
 
 /**

@@ -26,7 +26,7 @@ const action: PluginAction = async (event, pluginId) => {
     span.id = ROOT_ID;
     targetDOM?.append(span);
 
-    render(<App fieldCode={condition.fileField} />, span);
+    render(<App condition={condition} />, span);
   }
 
   return event;

@@ -21,14 +21,14 @@ const Component: VFC<Props> = memo(({ className, dispatch }) => {
   return (
     <div className={className}>
       <div>
-        <Button variant='outlined' color='primary' onClick={onClickClear}>
+        <Button variant='outlined' color='primary' size='large' onClick={onClickClear}>
           クリア
         </Button>
         <ColorPicker />
         <WidthSlider />
       </div>
       <div>
-        <KintoneColorButton onClick={onClickUpload} style={{ minWidth: '100px' }}>
+        <KintoneColorButton onClick={onClickUpload} size='large' style={{ minWidth: '120px' }}>
           保存
         </KintoneColorButton>
       </div>

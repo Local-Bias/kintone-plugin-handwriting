@@ -1,26 +1,28 @@
-import React, { Dispatch, memo, useEffect, VFC } from "react";
-import styled from "@emotion/styled";
-import { fabric } from "fabric";
+import React, { Dispatch, memo, useEffect, VFC } from 'react';
+import styled from '@emotion/styled';
+import { fabric } from 'fabric';
 
-import { CanvasContainer } from "../contexts";
-import { Action } from "../types/canvas";
+import { CanvasContainer } from '../contexts';
+import { Action } from '../types/canvas';
 
-const CANVAS_ID = "canvas";
+const CANVAS_ID = 'canvas';
 
-type Props = {
+type Received = { condition: PluginCondition };
+
+type Props = Received & {
   className?: string;
   dispatch: Dispatch<Action>;
 };
 
-const Component: VFC<Props> = memo(({ className, dispatch }) => {
+const Component: VFC<Props> = memo(({ className, dispatch, condition }) => {
   useEffect(() => {
     const initCanvas = new fabric.Canvas(CANVAS_ID, {
       isDrawingMode: true,
-      width: 800,
-      height: 300,
+      width: condition.size.width,
+      height: condition.size.height,
     });
 
-    dispatch({ type: "init", canvas: initCanvas });
+    dispatch({ type: 'init', canvas: initCanvas });
   }, []);
 
   return (
@@ -34,10 +36,10 @@ const StyledComponent = styled(Component)`
   border: 3px double #aaa;
 `;
 
-const Container: VFC = () => {
+const Container: VFC<Received> = ({ condition }) => {
   const { dispatch } = CanvasContainer.useContainer();
 
-  return <StyledComponent dispatch={dispatch} />;
+  return <StyledComponent condition={condition} dispatch={dispatch} />;
 };
 
 export default Container;

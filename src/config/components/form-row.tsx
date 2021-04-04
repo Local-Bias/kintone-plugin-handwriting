@@ -12,7 +12,7 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import { FieldsContainer, StorageContainer } from '../contexts';
-import { ConditionDelitionButton } from '.';
+import { ConditionDelitionButton, SizeSlider } from '.';
 
 type Props = {
   index: number;
@@ -48,6 +48,7 @@ const Component: VFCX<Props> = ({ className, index }) => {
             ))}
           </TextField>
           <Divider orientation='vertical' flexItem style={{ margin: '0 16px' }} />
+          <SizeSlider index={index} />
         </AccordionDetails>
       </Accordion>
       {storage.conditions.length > 1 && <ConditionDelitionButton index={index} />}

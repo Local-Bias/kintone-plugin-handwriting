@@ -4,11 +4,11 @@ import { CanvasContainer, ColorPickerContainer } from './contexts';
 import { Canvas, Toolbar } from './components';
 import styled from '@emotion/styled';
 
-const Component: VFCX<{ fieldCode: string }> = ({ className, fieldCode }) => (
-  <CanvasContainer.Provider initialState={fieldCode}>
+const Component: VFCX<{ condition: PluginCondition }> = ({ className, condition }) => (
+  <CanvasContainer.Provider initialState={condition.fileField}>
     <ColorPickerContainer.Provider>
       <div className={className}>
-        <Canvas />
+        <Canvas condition={condition} />
         <Toolbar />
       </div>
     </ColorPickerContainer.Provider>
@@ -16,7 +16,7 @@ const Component: VFCX<{ fieldCode: string }> = ({ className, fieldCode }) => (
 );
 
 const StyledComponent = styled(Component)`
-  min-width: 806px;
+  min-width: ${({ condition }) => condition.size.width + 6}px;
 `;
 
 export default StyledComponent;
