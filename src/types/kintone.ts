@@ -12,7 +12,9 @@ type PluginStorage = {
   conditions: PluginCondition[];
 };
 
-type PluginCondition = {};
+type PluginCondition = {
+  fileField: string;
+};
 
 /**
  * 各イベントに登録する処理

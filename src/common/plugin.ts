@@ -35,4 +35,6 @@ const createConfig = (): PluginStorage => ({
   conditions: [getNewCondition()],
 });
 
-export const getNewCondition = (): PluginCondition => ({});
+export const getNewCondition = (): PluginCondition => ({
+  fileField: '',
+});

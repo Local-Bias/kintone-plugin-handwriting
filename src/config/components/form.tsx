@@ -1,22 +1,26 @@
-import React, { FC, memo, VFCX } from 'react';
+import React, { VFCX } from 'react';
 import styled from '@emotion/styled';
+import { CircularProgress, Backdrop, Button } from '@material-ui/core';
 
-import { StorageContainer } from '../contexts';
+import { FieldsContainer, StorageContainer } from '../contexts';
+import { ConditionAdditionButton, FormRow } from '.';
 
-type Props = {
-  storage: PluginStorage;
+const Component: VFCX = ({ className }) => {
+  const { appFields } = FieldsContainer.useContainer();
+  const { storage } = StorageContainer.useContainer();
+
+  return (
+    <>
+      <div className={className}>
+        {storage.conditions.map((_, index) => (
+          <FormRow key={index} index={index} />
+        ))}
+        <ConditionAdditionButton label='設定を追加する' />
+      </div>
+    </>
+  );
 };
-
-const Component: VFCX<Props> = memo(({ className, storage }) => {
-  return <div className={className}>設定の必要はありません🍀</div>;
-});
 
 const StyledComponent = styled(Component)``;
 
-const Container: FC = () => {
-  const { storage } = StorageContainer.useContainer();
-
-  return <StyledComponent storage={storage} />;
-};
-
-export default Container;
+export default StyledComponent;
