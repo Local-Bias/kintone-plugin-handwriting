@@ -12,7 +12,7 @@ const Component: VFC<{ className?: string }> = ({ className }) => {
 
   return (
     <div className={className}>
-      <InputLabel>文字の太さ</InputLabel>
+      <InputLabel>ペンの太さ</InputLabel>
       <Slider value={width} onChange={onChange} valueLabelDisplay='auto' min={1} max={30} />
     </div>
   );

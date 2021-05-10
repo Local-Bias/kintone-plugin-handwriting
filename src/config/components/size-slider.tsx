@@ -7,8 +7,8 @@ import { StorageContainer } from '../contexts';
 type Received = { index: number };
 
 type Props = Received & {
-  condition: PluginCondition;
-  update: (index: number, condition: PluginCondition) => void;
+  condition: kintone.plugin.Condition;
+  update: (index: number, condition: kintone.plugin.Condition) => void;
 };
 
 const Component: VFCX<Props> = ({ className, index, condition, update }) => {

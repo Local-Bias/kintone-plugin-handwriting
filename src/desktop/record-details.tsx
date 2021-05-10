@@ -7,11 +7,11 @@ import App from './app';
 
 const ROOT_ID = 'ribbit_canvas';
 
-const events: EventType[] = ['app.record.detail.show'];
+const events: kintone.EventType[] = ['app.record.detail.show'];
 
-const enables: Enables = () => !document.getElementById(ROOT_ID);
+const enables: launcher.Enables = () => !document.getElementById(ROOT_ID);
 
-const action: PluginAction = async (event, pluginId) => {
+const action: launcher.Action = async (event, pluginId) => {
   const storage = restoreStorage(pluginId);
   const fieldMap = getFieldMap();
 

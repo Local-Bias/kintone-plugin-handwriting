@@ -3,7 +3,7 @@
  * @param id プラグインID
  * @returns 保存されていた設定情報
  */
-export const restoreStorage = (id: string): PluginStorage => {
+export const restoreStorage = (id: string): kintone.plugin.Storage => {
   const config = kintone.plugin.app.getConfig(id);
 
   const keys = Object.keys(config);
@@ -31,11 +31,11 @@ export const storeStorage = (target: Record<string, any>, callback?: () => void)
  * プラグインの設定情報のひな形を返却します
  * @returns プラグインの設定情報のひな形
  */
-const createConfig = (): PluginStorage => ({
+const createConfig = (): kintone.plugin.Storage => ({
   conditions: [getNewCondition()],
 });
 
-export const getNewCondition = (): PluginCondition => ({
+export const getNewCondition = (): kintone.plugin.Condition => ({
   fileField: '',
   size: {
     width: 800,

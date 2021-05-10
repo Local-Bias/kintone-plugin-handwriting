@@ -4,7 +4,7 @@ import { createContainer } from 'unstated-next';
 import { restoreStorage, storeStorage, getNewCondition } from '@common/plugin';
 
 type State = {
-  storage: PluginStorage;
+  storage: kintone.plugin.Storage;
 };
 
 type Action =
@@ -14,7 +14,7 @@ type Action =
   | {
       type: 'update';
       index: number;
-      condition: PluginCondition;
+      condition: kintone.plugin.Condition;
     }
   | {
       type: 'addCondition';
@@ -58,7 +58,7 @@ const hooks = (initialState: string = '') => {
 
   const save = useCallback(() => dispatch({ type: 'save' }), []);
   const update = useCallback(
-    (index: number, condition: PluginCondition) => dispatch({ type: 'update', index, condition }),
+    (index: number, condition: kintone.plugin.Condition) => dispatch({ type: 'update', index, condition }),
     []
   );
   const addCondition = useCallback(() => dispatch({ type: 'addCondition' }), []);

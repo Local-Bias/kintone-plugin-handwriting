@@ -9,7 +9,7 @@
   },
   "description": {
     "en": "kintone-plugin-template",
-    "ja": "手書きプラグイン",
+    "ja": "メモや署名に使える手書き機能を実装します",
     "zh": "插件模板"
   },
   "desktop": {

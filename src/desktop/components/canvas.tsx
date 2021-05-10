@@ -7,7 +7,7 @@ import { Action } from '../types/canvas';
 
 const CANVAS_ID = 'canvas';
 
-type Received = { condition: PluginCondition };
+type Received = { condition: kintone.plugin.Condition };
 
 type Props = Received & {
   className?: string;
@@ -21,7 +21,6 @@ const Component: VFC<Props> = memo(({ className, dispatch, condition }) => {
       width: condition.size.width,
       height: condition.size.height,
     });
-
     dispatch({ type: 'init', canvas: initCanvas });
   }, []);
 

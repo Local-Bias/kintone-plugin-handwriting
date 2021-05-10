@@ -4,7 +4,7 @@ import { CanvasContainer, ColorPickerContainer } from './contexts';
 import { Canvas, Toolbar } from './components';
 import styled from '@emotion/styled';
 
-const Component: VFCX<{ condition: PluginCondition }> = ({ className, condition }) => (
+const Component: VFCX<{ condition: kintone.plugin.Condition }> = ({ className, condition }) => (
   <CanvasContainer.Provider initialState={condition.fileField}>
     <ColorPickerContainer.Provider>
       <div className={className}>

@@ -1,7 +1,7 @@
-import React, { memo, useEffect, useState, VFC, VFCX } from 'react';
+import React, { memo, useState, VFC, VFCX } from 'react';
 import styled from '@emotion/styled';
-import { CompactPicker, ColorChangeHandler, TwitterPicker } from 'react-color';
-import { Dialog, Button, IconButton } from '@material-ui/core';
+import { ColorChangeHandler, TwitterPicker } from 'react-color';
+import { Dialog, IconButton } from '@material-ui/core';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 
 import { CanvasContainer } from '../contexts';
